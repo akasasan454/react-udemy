@@ -21,7 +21,7 @@ class Counter extends Component {
       <React.Fragment>
         <div>count: {this.state.count}</div>
         <button onClick={this.increment}>+1</button>
-        <button onClick={this.decriment}>-1</button>
+        <button onClick={this.decrement}>-1</button>
       </React.Fragment>
     );
   }
