@@ -1,36 +1,30 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Component } from "react";
 
-function App() {
-  const profiles = [
-    { name: "Taro", age: 20 },
-    { name: "Hanako", age: 12 },
-    { name: "NoName", age: 23 }
-  ];
-  return (
-    <React.Fragment>
-      {profiles.map((profile, index) => {
-        return <User name={profile.name} age={profile.age} key={index} />;
-      })}
-    </React.Fragment>
-  );
+const App = () => <Counter></Counter>;
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  decrement = () => {
+    this.setState({ count: this.state.count - 1 });
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <div>count: {this.state.count}</div>
+        <button onClick={this.increment}>+1</button>
+        <button onClick={this.decriment}>-1</button>
+      </React.Fragment>
+    );
+  }
 }
-
-const User = props => {
-  return (
-    <div>
-      Hi, I am {props.name}, and {props.age} year old!
-    </div>
-  );
-};
-
-// User.defaultProps = {
-//   age: 100
-// };
-
-User.propTypes = {
-  name: PropTypes.string,
-  age: PropTypes.number.isRequired
-};
 
 export default App;
