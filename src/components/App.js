@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import _ from "lodash";
 import { readEvents } from "../actions";
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
       <tr key={event.id}>
         <td>{event.id}</td>
         <td>{event.title}</td>
-        <td>{event.tbody}</td>
+        <td>{event.body}</td>
       </tr>
     ));
   }
